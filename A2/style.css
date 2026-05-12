@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.insect {
+    background-image: url(./assets/insect.png);
+    background-size: 105%;
+    height: 750px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(5px 5px 30px #2d2d2e);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    margin: 0 10px;
+    gap: 70px;
+}
+
+.searchbar {
+    background-color: #f0f0f0;
+    border: 2px black;
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: 40%;
+}
+
+.navbar h1 {
+    font-size: 35px;
+}
+
+.searchbar input {
+    margin-left: 10px;
+    background-color: #f0f0f0;
+    border: none;
+}
+
+.classify h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-style: italic;
+    rotate: -90deg;
+    position: absolute;
+    top: 50%;
+    font-size: 75px;
+}
+
+.list {
+    margin-top: 90px;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.item {
+    width: 200px;
+    position: relative;
+    padding-left: 28px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.item::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #b6342a;
+    position: absolute;
+    left: 0;
+    top: 6.5px;
+}
+
+.item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #111;
+}
+
+.item p {
+    font-size: 17px;
+    color: #333;
+}
+
+.hero1 {
+    background-color: #fefefd;
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.hero2 {
+    background-color: #b6342a;
+    height: 100%;
+    width: 50%;
+    color: white;
+}
+
+.navbar-right {
+    width: 100%;
+    height: 20%;
+}
+
+.nagiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 80px;
+}
+
+.nagiv li {
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: 100;
+    color: white;
+}
+
+.right-hero {
+    position: relative;
+    padding: 0 50%;
+}
+
+.beetle-mm {
+    background-image: url(./assets/Beetle_Icon_-_Transparent_BG.png);
+    background-size: cover;
+    background-position: 50%;
+    width: 100px;
+    height: 200px;
+    /* border-right:1px gainsboro solid ; */
+    /* padding-right: 20px ; */
+}
+
+.beetle-mm p {
+    padding-top: 200%;
+    padding-left: 30%;
+}
+
+.head h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+
+.insect-size {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    padding-right: 0;
+
+}
+
+.specs {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    border-left: 1px gainsboro solid;
+    padding: 20px 15px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.spec-items {
+    width: 115px;
+}
+
+.cart {
+    width: 200px;
+    margin: 40px;
+    color: #D7BB90;
+}
+
+button {
+    margin-top: 30px;
+    font-size: 15px;
+    padding: 10px 20px;
+    background-color: #D7BB90;
+    border-radius: 10px;
+    border: none;
+
+}
