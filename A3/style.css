@@ -91,33 +91,33 @@ nav a {
 .btns {
     display: flex;
     align-items: center;
-    width: 25%;
+    width: 100%;
+
 }
 
 .btn {
     font-size: 20px;
-    padding: 10px 20px;
+    padding: 20px 20px;
     border: 1px solid rgb(255, 0, 106);
     border-radius: 10px;
     background-color: transparent;
     color: white;
     margin: 10px;
     gap: 15px;
-    display: flex;
-    justify-content: flex-start;
+    display: inline-block;
+    justify-content: space-around;
     align-items: center;
 
-}
-
-.btn i {
-    padding: 0;
-    margin: 0;
-    gap: 0;
 
 }
+
 
 .btns a {
     text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .btn i {
