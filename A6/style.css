@@ -31,7 +31,7 @@ body {
 main {
     width: 100%;
     min-height: 100vh;
-    /* min height is used for giving minimum height to element*/
+
     background-color: #FBF9EB;
 
 
@@ -102,11 +102,30 @@ nav .nav-part-2 {
 
 }
 
-.nav-part-3 h3 {
+.nav-part-3 a {
     font-weight: 300;
     display: none;
     font-family: 'Roboto Mono', monospace;
     font-size: small;
+    text-decoration: none;
+    color: #201C1A;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-part-3 a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #201C1A;
+    transition: width 0.5s ease;
+}
+
+.nav-part-3 a:hover::after {
+    width: 100%;
 }
 
 .nav-part-3 svg {
@@ -341,25 +360,101 @@ nav .nav-part-2 {
     display: flex;
     width: 100%;
     justify-content: center;
-    height: 110vh;
+    min-height: 100vh;
+    padding: 2rem 1rem;
 }
 
-
+.sec3-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
 .sec3-cntr-1 p {
-    padding: 0.1rem 0.5rem;
-    font-size: 3rem;
-    font-family: Midnight;
+    padding: 0.2rem 0.6rem;
+    font-size: 2.2rem;
+    font-family: Midnight, sans-serif;
     font-weight: 600;
-    background-color: #DAAEEA;
-    border-radius: 0.5rem;
+    background-color: #FF7D34;
+    border: 2px solid #000;
+    border-radius: 0.4rem;
     text-transform: uppercase;
-    margin-top: 5rem;
-    rotate: -5deg;
-    letter-spacing: 2px;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    rotate: -4deg;
+    letter-spacing: 1px;
+    display: inline-block;
+    color: #000;
 }
 
-@media (min-width:768px) {}
+.sec3-cntr-2 p {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    font-family: Reckless, serif;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #201C1A;
+}
+
+.sec3-cntr-2 em {
+    font-style: italic;
+}
+
+.sec-3-mid {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    font-size: 1.8rem;
+    font-family: Reckless, serif;
+    border: 1px solid #000;
+    border-radius: 0.8rem;
+    background-color: transparent;
+    color: #000;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #a3a3a3;
+}
+
+.explore-text {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    color: #201C1A;
+}
+
+.pill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.pill {
+    padding: 0.4rem 1.2rem;
+    font-size: 1.6rem;
+    font-family: Reckless, serif;
+    background-color: #DDEAFC;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+    color: #201C1A;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pill:hover {
+    background-color: #CDE2FF;
+}
+
+
 
 @media (min-width:1024px) {
 
@@ -411,7 +506,7 @@ nav .nav-part-2 {
 
     }
 
-    .nav-part-3 h3 {
+    .nav-part-3 a {
         font-weight: 300;
         display: block;
         font-size: 0.8rem;
@@ -477,10 +572,558 @@ nav .nav-part-2 {
     }
 
     #section-3 .sec3-container {
-        min-width: calc(1024px + 80px);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        /* justify-content: space-between; */
+        padding: 0 4rem;
+        min-width: unset;
+        width: 80%;
     }
+
+    .search-input {
+        width: 450px;
+    }
+
+    #section-4 {
+        padding: 6rem 4rem;
+    }
+
+    .sec4-container {
+        align-items: flex-start;
+    }
+
+    .sec4-text {
+        display: block;
+    }
+
+    .reviews-track {
+        gap: 2rem;
+    }
+
+    .review-card {
+        flex: 0 0 320px;
+        height: 480px;
+    }
+
+    .slider-arrow {
+        display: none;
+    }
+
+    .slider-dots {
+        display: none;
+    }
+}
+
+/* --- Section 4 Base Styles --- */
+
+#section-4 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 4rem 1rem;
+    overflow: hidden;
+}
+
+.sec4-container {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sec4-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.sec4-badge p {
+    padding: 0.2rem 0.6rem;
+    font-size: 2.2rem;
+    font-family: Midnight, sans-serif;
+    font-weight: 600;
+    background-color: #87CD42;
+    border: 2px solid #000;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    rotate: -4deg;
+    letter-spacing: 1px;
+    display: inline-block;
+    color: #000;
+}
+
+.sec4-text p {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-family: Reckless, serif;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #201C1A;
+}
+
+.sec4-text em {
+    font-style: italic;
+}
+
+.reviews-slider-container {
+    position: relative;
+    width: 100%;
+}
+
+.reviews-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 1rem;
+}
+
+.reviews-track::-webkit-scrollbar {
+    display: none;
+}
+
+.review-card {
+    flex: 0 0 85vw;
+    max-width: 400px;
+    height: 500px;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: center;
+    overflow: hidden;
+}
+
+.review-content {
+    flex: 1;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.review-content h2 {
+    font-family: Reckless, serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #201C1A;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.review-content p {
+    font-family: Figtree, sans-serif;
+    font-size: 1rem;
+    color: #201C1A;
+}
+
+.review-product {
+    height: 120px;
+    border-top: 1px solid #000;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1rem;
+}
+
+.product-img {
+    width: 60px;
+    height: 80px;
+    border-right: 1px solid #000;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img img {
+    max-height: 100%;
+    max-width: 100%;
+    scale: 2;
+    object-fit: contain;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.shop-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 2rem;
+    font-family: Figtree, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #000;
+}
+
+.shop-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.slider-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 30px;
+    height: 2px;
+    background-color: #d1d1d1;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #201C1A;
+}
+
+
+
+.section-origins {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('https://www.twoleavestea.com/cdn/shop/files/adam-vradenburg-_gu7E90QChU-unsplash_1_1.webp?v=1771592855&width=1600');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-origins::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.origins-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+}
+
+.origins-badge {
+    padding: 0.2rem 0.6rem;
+    font-size: 1.5rem;
+    font-family: Midnight, sans-serif;
+    font-weight: 600;
+    background-color: #A3C9FF;
+    border: 2px solid #000;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.origins-heading {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-family: Midnight, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.origins-text {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-family: Reckless, serif;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 5rem;
+    max-width: 900px;
+}
+
+.origins-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    width: 100%;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+.feature-item img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.origins-btn {
+    padding: 1.2rem 4rem;
+    font-size: 1.2rem;
+    font-family: Figtree, sans-serif;
+    font-weight: 500;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 90%;
+    max-width: 350px;
+}
+
+.origins-btn:hover {
+    background-color: #f0f0f0;
+}
+
+@media (min-width: 1024px) {
+    .origins-badge {
+        font-size: 2rem;
+    }
+
+    .origins-btn {
+        width: auto;
+        font-size: 1.4rem;
+    }
+}
+
+
+
+.site-footer {
+    background-color: #CDE2FF;
+    padding: 4rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-section {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.newsletter-content h2 {
+    font-family: Midnight, sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #201C1A;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-content p {
+    font-family: Reckless, serif;
+    font-size: 1.6rem;
+    color: #201C1A;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-family: Figtree, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    width: 300px;
+    max-width: 100%;
+}
+
+.newsletter-form button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-family: Figtree, sans-serif;
+    background-color: #2A2857;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.newsletter-form button:hover {
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #201C1A;
+    border-radius: 50%;
+    color: #201C1A;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.social-links a:hover {
+    background-color: #201C1A;
+    color: #fff;
+}
+
+.footer-links-container {
+    width: 95%;
+    max-width: 1400px;
+    background-color: #2A2857;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 3rem 2rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.link-column {
+    min-width: 150px;
+}
+
+.link-column h3 {
+    font-family: Reckless, serif;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.link-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.link-column ul li a {
+    font-family: Figtree, sans-serif;
+    font-size: 0.9rem;
+    color: #a3a3a3;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-column ul li a:hover {
+    color: #fff;
+}
+
+#section-footer-illustration {
+    width: 100%;
+    height: 50vh;
+    background-color: #CDE2FF;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem 2rem 1rem 2rem;
+    background-image: url('https://www.twoleavestea.com/cdn/shop/files/footer-extended_1.png?v=1771834074');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.footer-ill-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-mid-logo {
+    width: 250px;
+    margin-top: 2rem;
+}
+
+.footer-copyright {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.6rem;
+    color: #201C1A;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    text-transform: uppercase;
 }
