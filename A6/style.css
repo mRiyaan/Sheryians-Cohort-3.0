@@ -118,14 +118,20 @@ nav .nav-part-2 {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 1px;
     background-color: #201C1A;
-    transition: width 0.5s ease;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .nav-part-3 a:hover::after {
-    width: 100%;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 .nav-part-3 svg {
@@ -310,7 +316,8 @@ nav .nav-part-2 {
 }
 
 .card-top:hover img {
-    scale: 1.1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .card-btm {
@@ -543,7 +550,8 @@ nav .nav-part-2 {
         margin-top: 10%;
         margin: 2rem auto;
         font-size: 2rem;
-        scale: 2;
+        -webkit-transform: scale(2);
+        transform: scale(2);
     }
 
     .section2-text h1 {
@@ -740,7 +748,8 @@ nav .nav-part-2 {
 .product-img img {
     max-height: 100%;
     max-width: 100%;
-    scale: 2;
+    -webkit-transform: scale(2);
+    transform: scale(2);
     object-fit: contain;
 }
 
@@ -815,7 +824,7 @@ nav .nav-part-2 {
 
 .section-origins {
     width: 100%;
-    min-height: 130vh;
+    min-height: 150vh;
     background-image: url('https://www.twoleavestea.com/cdn/shop/files/adam-vradenburg-_gu7E90QChU-unsplash_1_1.webp?v=1771592855&width=1600');
     background-size: cover;
     background-position: center;
