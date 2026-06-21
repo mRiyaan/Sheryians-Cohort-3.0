@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Task Manager</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Task Master</h1>
+            <button id="theme-toggle" class="btn-theme" title="Toggle Theme">
+                <span class="icon">🌓</span>
+            </button>
+        </header>
+        <section class="task-stats">
+            <div class="stat-box">
+                <span class="stat-label">Total</span>
+                <span class="stat-value" id="total-count">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Completed</span>
+                <span class="stat-value" id="completed-count">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Pending</span>
+                <span class="stat-value" id="pending-count">0</span>
+            </div>
+        </section>
+
+
+        <section class="task-creation">
+            <form id="task-form" class="glass-panel">
+                <div class="input-group">
+                    <input type="text" id="task-title" placeholder="What needs to be done?" required value="">
+                </div>
+                <div class="input-group">
+                    <select id="task-category" required>
+                        <option value="" disabled selected>Category</option>
+                        <option value="Work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Urgent">Urgent</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Add Task</button>
+            </form>
+
+
+            <div class="attr-prop-demo">
+                <button id="demo-attr-prop" class="btn-secondary btn-sm">Demo: Property vs Attribute</button>
+                <p id="demo-result" class="demo-output"></p>
+            </div>
+        </section>
+
+        <section class="task-controls glass-panel">
+            <input type="text" id="search-input" placeholder="Search tasks...">
+            <select id="filter-category">
+                <option value="All">All Categories</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+            <button id="clear-all" class="btn-danger">Clear All</button>
+        </section>
+
+
+        <main class="task-list-container">
+            <ul id="task-list">
+
+            </ul>
+        </main>
+
+        <hr class="divider">
+
+
+        <section class="event-demo-section glass-panel">
+            <h2>Event Propagation Demonstration</h2>
+            <p>Open console and click the button to see bubbling and capturing execution order.</p>
+            <div id="grandparent" class="demo-box grandparent">
+                Grandparent
+                <div id="parent" class="demo-box parent">
+                    Parent
+                    <button id="child" class="btn-primary child-btn">Child Button</button>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Browser Rendering Pipeline Section -->
+        <section class="rendering-pipeline-section glass-panel">
+            <h2>Browser Rendering Pipeline</h2>
+            <div class="pipeline-flow">
+                <div class="flow-column">
+                    <div class="flow-card">HTML</div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-card">Parsing</div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-card">Tokenization</div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-card highlight-dom">DOM Tree</div>
+                </div>
+
+                <div class="flow-column">
+                    <div class="flow-card">CSS</div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-card highlight-cssom">CSSOM Tree</div>
+                </div>
+            </div>
+            <div class="pipeline-merge">
+                <div class="arrow-merge">↘ ↙</div>
+                <div class="flow-card highlight-render">DOM Tree + CSSOM Tree</div>
+                <div class="arrow">↓</div>
+                <div class="flow-card final-render">Render Tree</div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
